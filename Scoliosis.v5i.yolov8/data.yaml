@@ -1,0 +1,16 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+kpt_shape: [13, 3]
+flip_idx: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+nc: 2
+names: ['normal', 'scoliosis']
+
+roboflow:
+  workspace: punpunleafy-t28og
+  project: scoliosis-h6hcp
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/punpunleafy-t28og/scoliosis-h6hcp/dataset/5
