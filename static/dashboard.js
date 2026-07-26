@@ -125,7 +125,10 @@ saveBtn.addEventListener("click", async()=> {
         severity: currentResult.severity,
         deviation_percent: currentResult.deviation_percent,
         conclusion: currentResult.conclusion,
-        keypoints: currentResult.keypoints
+        keypoints: currentResult.keypoints,
+        shoulder_tilt: currentResult.shoulder_tilt,
+        hip_tilt: currentResult.hip_tilt
+
     }
     const response = await fetch("/save_session", {
         method: "POST",

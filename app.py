@@ -4,8 +4,8 @@ from ultralytics import YOLO
 
 app = Flask(__name__)
 
-model = YOLO("train-6/weights/best.pt")
-pose_model = YOLO("yolo26n-pose.pt")
+model = YOLO("train-6/weights/best.onnx", task="pose")
+pose_model = YOLO("yolo26n-pose.onnx", task="pose")
 
 UPLOAD_FOLDER = "static/uploads"
 OUTPUT_FOLDER = "static/outputs"
@@ -26,7 +26,9 @@ def init_db():
         severity TEXT,
         deviation_percent REAL,
         conclusion TEXT,
-        keypoints TEXT
+        keypoints TEXT,
+        shoulder_tilt REAL,
+        hip_tilt REAL
     )""")
 
 
@@ -172,9 +174,11 @@ def save_session():
         severity,
         deviation_percent,
         conclusion,
-        keypoints
+        keypoints,
+        shoulder_tilt,
+        hip_tilt
     )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         data["name"],
         data["date"],
@@ -184,7 +188,9 @@ def save_session():
         data["severity"],
         data["deviation_percent"],
         data["conclusion"],
-        json.dumps(data["keypoints"])
+        json.dumps(data["keypoints"]),
+        data["shoulder_tilt"],
+        data["hip_tilt"]
     ))
     conn.commit()
     conn.close()
@@ -233,7 +239,9 @@ def load_session(id):
         "severity": session[6],
         "deviation_percent": session[7],
         "conclusion": session[8],
-        "keypoints": json.loads(session[9])
+        "keypoints": json.loads(session[9]),
+        "shoulder_tilt": session[10],
+        "hip_tilt": session[11]
     })
 
 @app.route("/delete_session/<int:id>", methods=["DELETE"])
