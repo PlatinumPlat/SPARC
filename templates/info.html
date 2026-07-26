@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARC</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>SPARC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="guide.html">Guide</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="guide">
+        <h2>Information</h2>
+        <p>
+            Scoliosis is an abnormal curvature of the spine that causes it to deviate from its normal straight vertical line and
+            form a C or S shape.
+            <br><br>
+        </p>
+        <h3>
+            Types of Scoliosis
+        </h3>
+        <h4>
+            Idiopathic Scoliosis
+        </h4>
+        <p>
+            Idiopathic Scoliosis is the most common type of scoliosis and accounts for roughly 80% of all cases.
+            However, although there is no definite known cause, having a genetic link to someone in your family who had scoliosis increase your chances of having it too.
+            Depending on the age you are diagnosed, you may have a different name for your scoliosis:
+        </p>
+        <div class="scoliosis-types">
+            <div class="age">Birth – 3 years old</div>
+            <div class="type">Infantile Idiopathic Scoliosis</div>
+        
+            <div class="age">4 – 10 years old</div>
+            <div class="type">Juvenile Idiopathic Scoliosis</div>
+        
+            <div class="age">10 – 18 years old</div>
+            <div class="type">Adolescent Idiopathic Scoliosis</div>
+        </div>
+        <h4>
+            Congenital Scoliosis
+        </h4>
+        <p>
+            Congenital Scoliosis is a rare type that develops in the womb when vertebrae fail to form a normal spine structure.<br><br>
+        </p>
+        <h4>
+            Neuromuscular Scoliosis
+        </h4>
+        <p>
+            Neuromuscular Scoliosis is caused by nerve or muscle conditions that prevent the spine from supporting itself and is
+            often diagnosed alongside conditions such as cerebral palsy.<br><br>
+        </p>
+        <h4>
+            Degenerative Scoliosis
+        </h4>
+        <p>
+            Degenerative Scoliosis is developed by adults later in life due to degeneration and wear in one's bones, which results
+            in the spine collapsing or bending.<br><br>
+        </p>
+        <h3>
+            Cobb Angle
+        </h3>
+        <p>
+            The severity of one's scoliosis can be measured by doctors using a universal standard that is calculated from an X-ray
+            and measures the angle between the most tilted vertebrae at the top and bottom of the curve.
+        </p>
+        <img src="{{ url_for('static', filename='cobb.jpg') }}">
+        <br>
+        <h3>
+            Scoliosis Treatments
+        </h3>
+        <p>Depending on the severity of your curve and the amount of growth you have left, you may receive different options for
+        treatment.</p><br>
+        <h4>
+            Curves under 20 degrees
+        </h4>
+        <p>
+            For people who are no longer growing, you may not need any treatment for your scoliosis.
+            For children who have not yet finished growing, doctors will typically recommend having regular checkups and X-rays
+            taken every 6-12 months to monitor the curve and identify the rate it is progressing.
+            <br><br>
+        </p>
+        <h4>
+            Curves larger than 20 degrees but under 45 degrees
+        </h4>
+        <p>
+            A moderate curve from 25-45 degrees can be stopped from progressing, but not necessarily straightened.<br><br> Corrective bracing like a TLSO or Boston brace can be used for growing children. These braces apply pressure to slow the
+            curve's progression. Physical therapy such as scoliosis exercises including the Schroth Method can strengthen your muscles and in turn
+            stabilize the spine while improving posture and relieving back pain.
+            <br><br>
+        </p>
+        <h4>
+            Curves over 45 degrees
+        </h4>
+        <p>
+            Surgery may be recommended for severe curves over 50 degrees or extremely painful curves, especially those that affect
+            your heart and lungs.<br><br>
+            There are 2 main surgeries that correct scoliosis curves.
+            <br><br>
+            <strong>Spinal Fusion</strong>
+            <p>This surgery attaches rods and screws to the curve that essentially fuses the child's spine to straighten the curve. As
+            spinal fusion "fuses" the bones together, it decreases one's flexibility as their ability to bend along the fused area will
+            be limited. However, this surgery is the most common and has the highest rates of success.<br><br>
+            
+            <strong>VBT (Vertebral Body Tethering)</strong>
+            <p>Instead of fusing the spine, the VBT System plants "The Tether", a flexible cord that is attached to the spine. Although
+            this surgery allows the patient to bend and retain flexibility, it requires the patient to have a considerable amount of
+            growth left.<br><br>
+            In particular, as the patient grows, the cord will put pressure on the outside of the curve to straighten the spine.
+            </p><br><br>
+        </p>
+        <p>Although I will not describe these treatments in detail here, you can look into Halo Traction and Anterior Scoliosis
+        Correction (ASC) for correcting severe curves. However, these treatments are relatively new and only available in
+        specific countries.<br><br>The main source I used for this information was <strong><a href="https://www.shrinerschildrens.org/en/pediatric-care/scoliosis">https://www.shrinerschildrens.org/en/pediatric-care/scoliosis.</a></strong></p>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>SPARC</span>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Main Pages</h4>
+                    <a href="index.html">Home</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+    
+                <div>
+                    <h4>Inner Pages</h4>
+                    <a href="guide.html">Guide</a>
+                    <a href="info.html">Info</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="creator">
+            Created by Sophia Pu
+        </p>
+    </footer>
+
+
+</body>
+
+</html>
