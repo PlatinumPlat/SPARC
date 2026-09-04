@@ -7,58 +7,22 @@ It is a screening tool that analyzes an image of a patient's back to identify th
 In addition, SPARC allows users to save their results and access them afterwards to encourage users to track the progression of their curve and seek professional help in the case that it increases significantly.
 
 # Demo
-Access the demo at this google drive link: [https://drive.google.com/drive/folders/1eXi6Yc8do5UbdwkRtm8zSdeHkoL0qRMu?usp=sharing](https://drive.google.com/drive/folders/1eXi6Yc8do5UbdwkRtm8zSdeHkoL0qRMu?usp=sharing)
+Access the demo + sample images at this google drive link (no google drive account needed): [https://drive.google.com/drive/folders/1eXi6Yc8do5UbdwkRtm8zSdeHkoL0qRMu?usp=sharing](https://drive.google.com/drive/folders/1eXi6Yc8do5UbdwkRtm8zSdeHkoL0qRMu?usp=sharing)
+Take a look at this ^^ for a quick preview!
 
 # Instructions For Use
-Due to high server hosting costs, SPARC is currently locally-run.
-To test it yourself on your own computer, follow these steps:
+(Updated 9/4/2026)
+To use SPARC, simply go to [https://spu314.hackclub.app/index.html](https://spu314.hackclub.app/index.html)!!
+Please note that SPARC is now hosted using Hack Club's nest, so usage of the dashboard page will be significantly slower than if you run SPARC locally!
+For example, uploading and waiting for results can take from 10 seconds to a minute, so I would really recommend running SPARC locally if you want to use it regularly :)
 
-## Requirements
-- Python 3.10 or newer
-
-## 1. Clone this repo
-Open Command Prompt, PowerShell, or Terminal.
-Either type this command if you have git
-```bash
-git clone https://github.com/<your-username>/SPARC.git
-cd SPARC
-```
-Or, download the ZIP from GitHub and extract it, then open Command Prompt, PowerShell, or Terminal in the extracted "SPARC" folder before continuing.
-
-## 2. Create a virtual environment
-### Windows
-Run
-```powershell
-py -m venv .venv
-.\.venv\Scripts\activate
-```
-
-### macOS/Linux
-Run
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-## Install Dependencies
-Run
-```bash
-pip install -r requirements.txt
-```
-
-## 4. Run the application
-Run
-```bash
-python app.py
-```
-
-## 5. Checkout the website!!!
-In your browser, go to
-
-```
-http://127.0.0.1:5000/index.html
-```
-SPARC should be running locally, and you can just follow the instructions on the website to test the model.
+# Features
+- Home: Landing page
+- Dashboard: Where you can create/view sessions that analyze uploaded (or sample) images and allow you to view the results image output from model and some conclusions based on that image (confidence level, spine deviation, hip tilt, shoulder tilt, scoliosis severity)
+- Guide: Details on how to use SPARC
+- Info: Information on scoliosis types and treatments
+- About: A little about me and why I created this project
+- FAQ: Do you have any questions?
 
 # Tech Stack
 - HTML for designing the webpage
