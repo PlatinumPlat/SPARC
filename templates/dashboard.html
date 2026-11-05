@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPARC</title>
     <link rel="stylesheet" href="../static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -35,7 +37,7 @@
         <aside class="logs-panel">
             <h2>Session Logs</h2>
             <br><br>
-            <div class="current-session" id ="current-session">
+            <div class="current-session" id="current-session">
                 <strong>New Session</strong>
             </div>
             <div class="log-list" id="log-list">
@@ -43,6 +45,17 @@
         </aside>
         <main class="session-panel">
             <h2 id="session-date"></h2>
+            <div class="imp-notice">
+                <p>
+                    <strong>IMPORTANT MESSAGE!</strong><br><br>
+                    I have a suspicion that you did not read my ship... That is why you are staring at the screen,
+                    wondering why SPARC is not working! <br><br> Again, because SPARC is currently <strong>hosted on Hack Club's
+                        nest (the only free deployment option that worked..), it is SUPER slow and will take SUPER long for the model to analyze the images.</strong>
+                    If you want proof, check out my demo in the README, which shows that it takes
+                    less than <strong>2 seconds</strong> for SPARC to analyze images when locally-run. Please note that it may take <strong>up to 2
+                    minutes on this website</strong> for the model to process the images, <strong>depending on your internet connection</strong>.
+                </p>
+            </div>
             <div class="top-section">
                 <div class="upload-box upload-btn">
                     <label for="imageInput">
@@ -51,11 +64,7 @@
                     <div class="preview-container" id="preview-container">
                         <img id="preview" alt="Preview" src="">
                     </div>
-                    <input
-                        type="file"
-                        id="imageInput"
-                        accept="image/*"
-                        hidden>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
                 </div>
                 <div class="results-box">
                     <label>Results</label>
@@ -67,13 +76,13 @@
             </div>
             <div class="sample-images">
                 <p class="sample-txt">Sample Images</p>
-                    <img src="{{ url_for('static', filename='test5.jpg') }}" class="sample-img">
-                    <img src="{{ url_for('static', filename='test15.jpg') }}" class="sample-img">
-                    <img src="{{ url_for('static', filename='test16.jpg') }}" class="sample-img">
-                    <img src="{{ url_for('static', filename='test21.jpg') }}" class="sample-img">
-                    <img src="{{ url_for('static', filename='test25.jpg') }}" class="sample-img">
-                    <img src="{{ url_for('static', filename='test26.jpg') }}" class="sample-img">
-                    <img src="{{ url_for('static', filename='none.png') }}" class="rmv" id="rmv">
+                <img src="{{ url_for('static', filename='test5.jpg') }}" class="sample-img">
+                <img src="{{ url_for('static', filename='test15.jpg') }}" class="sample-img">
+                <img src="{{ url_for('static', filename='test16.jpg') }}" class="sample-img">
+                <img src="{{ url_for('static', filename='test21.jpg') }}" class="sample-img">
+                <img src="{{ url_for('static', filename='test25.jpg') }}" class="sample-img">
+                <img src="{{ url_for('static', filename='test26.jpg') }}" class="sample-img">
+                <img src="{{ url_for('static', filename='none.png') }}" class="rmv" id="rmv">
             </div>
             <br>
             <br>
@@ -81,13 +90,13 @@
                 <div class="results-textbox">
                     <strong>Results</strong><br>
                     <p>
-                        
+
                     </p>
                 </div>
                 <div class="data-box">
                     <strong>Data</strong><br>
                     <p>
-                
+
                     </p>
                 </div>
             </div>
@@ -109,7 +118,7 @@
                     <a href="dashboard.html">Dashboard</a>
                     <a href="faq.html">FAQ</a>
                 </div>
-    
+
                 <div>
                     <h4>Inner Pages</h4>
                     <a href="guide.html">Guide</a>
@@ -125,4 +134,5 @@
     </footer>
     <script src="../static/dashboard.js"></script>
 </body>
+
 </html>
