@@ -143,7 +143,7 @@ saveBtn.addEventListener("click", async()=> {
     const sessionData = {
         name: name,
         date: new Date().toLocaleDateString(),
-        original_image: preview.src,
+        original_image: currentResult.original_image,
         result_image: resultImage.src,
 
         confidence: currentResult.confidence,

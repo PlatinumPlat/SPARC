@@ -147,6 +147,7 @@ def predict():
         )
     
     return jsonify({
+        "original_image": "/static/uploads/"+file.filename,
         "image": "/static/outputs/" + file.filename,
         "keypoints": keypoints,
         "confidence": confidence,
