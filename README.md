@@ -3,7 +3,7 @@ Spinal Posture Assessment and Risk Classifier
 
 # Description
 SPARC aims to advocate for, facilitate, and promote early detection of scoliosis in an accessible manner.
-It is a screening tool that analyzes an image of a patient's back to identify the severity of a patient's scoliosis, their shoulder tilt, and hip tilt.
+It is an AI-powered screening tool that analyzes an image of a patient's back to identify the severity of a patient's scoliosis, their shoulder tilt, and hip tilt.
 In addition, SPARC allows users to save their results and access them afterwards to encourage users to track the progression of their curve and seek professional help in the case that it increases significantly.
 
 # Demo
