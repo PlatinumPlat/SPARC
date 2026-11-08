@@ -7,6 +7,8 @@ It is an AI-powered screening tool that analyzes an image of a patient's back to
 In addition, SPARC allows users to save their results and access them afterwards to encourage users to track the progression of their curve and seek professional help in the case that it increases significantly.
 
 # Demo
+YouTube Link: [https://www.youtube.com/watch?v=Yb6vQ-a2rPg](https://www.youtube.com/watch?v=Yb6vQ-a2rPg)
+
 Access the demo + sample images at this google drive link (no google drive account needed): [https://drive.google.com/drive/folders/1eXi6Yc8do5UbdwkRtm8zSdeHkoL0qRMu?usp=sharing](https://drive.google.com/drive/folders/1eXi6Yc8do5UbdwkRtm8zSdeHkoL0qRMu?usp=sharing)
 Take a look at this ^^ for a quick preview!
 
