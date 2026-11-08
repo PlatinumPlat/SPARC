@@ -35,8 +35,8 @@ ul{
     align-items: center;
     padding:18px 35px;
     background:#fffffff2;
-    border-radius:20px;
-    box-shadow:0 4px 2px rgba(0, 0, 0,.05);
+    border-radius:40px;
+    box-shadow:0 4px 2px #5404eb0d;
 }
 
 .logo{
@@ -70,7 +70,7 @@ ul{
 
 footer{
     padding:60px 8%;
-    background:#fefdff;
+    background:#f9f5fc;
 }
 
 .footer-container{
@@ -153,7 +153,7 @@ hr{
     background: #5c5d8a;
     color: #ffffff;
     padding: 12px 22px;
-    border-radius: 25px;
+    border-radius: 7px;
     transition: .3s;
 }
 
@@ -174,8 +174,8 @@ hr{
 
 .logs-panel {
     width:260px;
-    background:#fff;
-    border-radius:20px;
+    background:#b7a4cf;
+    border-radius:2px;
     padding:25px;
     display:flex;
     flex-direction:column;
@@ -191,7 +191,9 @@ hr{
     background:#ece8ff;
     color:#4d4b87;
     padding: 14px 18px;
-    border-radius: 12px;
+    border-radius: 2px;
+    border-width: 2px;
+    border-color: #1e208a;
     margin-bottom: 20px;
     font-size: 1rem;
     transition: background-color 0.25s ease, color 0.25s ease;
@@ -210,9 +212,9 @@ hr{
 
 .log-item {
     background: #fafafa;
-    border: 1px solid #e7e7e7;
+    border: 3px solid #e7e7e7;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 3px;
     cursor: pointer;
     transition: 0.25s;
 }
@@ -233,6 +235,7 @@ hr{
     font-size: 16px;
     cursor: pointer;
     padding: 5px;
+    font-weight: bold;
 }
 
 .delete-session-btn:hover {
@@ -261,8 +264,8 @@ hr{
     flex: 1;
     flex-direction:column;
     background: #fff;
-    border-radius: 20px;
-    border: 2px solid #ececf3;
+    border-radius: 7px;
+    border: 4px solid #ececf3;
     min-height: 280px;
     display: flex;
     justify-content: center;
@@ -300,8 +303,8 @@ hr{
 }
 
 .results-textbox, .data-box {
-    background: white;
-    border-radius: 20px;
+    background: rgb(212, 206, 236);
+    border-radius: 3px;
     padding: 25px;
     min-height: 220px;
 }
@@ -322,13 +325,13 @@ hr{
 .logs-panel,
 .results-textbox,
 .data-box {
-    border: 1px solid #ececf3;
+    border: 3px solid #ead8ff;
 }
 
 #result-image, #preview {
     max-width: 280px;
     max-height: 550px;
-    border-radius: 20px;
+    border-radius: 3px;
     overflow: hidden;
     background: white;
     display: none;
@@ -340,10 +343,10 @@ hr{
 }
 
 .sample-images {
-    padding: 10px;
+    padding: 20px;
     padding-left:20px;
-    border: 2px solid #c6c7df;
-    max-width: 500px;
+    border: 3px solid #c6c7df;
+    max-width: 550px;
     border-radius: 5px;
     background-color: white;
 }
@@ -364,7 +367,7 @@ hr{
     border: 2px solid #c6c7df;
     border-radius: 8px;
     cursor: pointer;
-    transition:.2s;
+    transition:.1s;
     margin-right:7px;
 }
 
@@ -393,7 +396,7 @@ hr{
 
 #save-session-btn {
     margin-top: 20px;
-    background-color: #c6c7df;
+    background-color: #e7e8fc;
     border-radius: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -407,6 +410,7 @@ hr{
     width: 100%;
     padding: 200px 40px 40px;
     font-family: Karla;
+    background-color: #e6e1f8;
 }
 
 .faq > h2 {
@@ -424,8 +428,8 @@ hr{
     width: 100%;
     padding: 18px 25px;
     background: white;
-    border: 2px solid #ececf3;
-    border-radius: 15px;
+    border: 3px solid #a2a2d1;
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -435,20 +439,85 @@ hr{
 }
 
 .faq-question:hover {
-    border-color: #8c88c2;
+    border-color: #575477;
 }
 
 .faq-answer {
-    font-family: Karla;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
     display: none;
     margin-top: 10px;
     padding: 20px;
     background: white;
-    border-radius: 15px;
+    border-radius: 10px;
     color: #555;
     line-height: 1.7;
 }
 
+body.about-page {
+    background: repeating-linear-gradient(135deg,#f3edff 0px,#f3edff 100px, #e5d8ff 100px,#e5d8ff 200px);
+}
+
+body.about-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: #ffffff8c;
+    pointer-events: none;
+    z-index: -1;
+}
+body.dashboard-page {
+    background-color: #f6f9fa;
+    background-image: linear-gradient(to bottom,
+            transparent 240px,
+            #cbb1e4 240px,
+            #cbb1e4 470px,
+            transparent 470px);
+    background-size: 100% 838px;
+    background-repeat: repeat-y;
+    background-position: top left;
+    background-attachment: scroll;
+}
+body.guide-page {
+    background: repeating-linear-gradient(0deg,
+            #f6f9fa 0px,
+            #f6f9fa 550px,
+            #cbb1e4 250px,
+            #cbb1e4 680px,
+            #f6f9fa 580px,
+            #f6f9fa 500px) !important;
+    background-attachment: fixed;
+}
+
+body.guide-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: #ffffff8c;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body.info-page {
+    background: repeating-linear-gradient(0deg,
+            #f6f9fa 0px,
+            #f6f9fa 550px,
+            #cbb1e4 350px,
+            #cbb1e4 680px,
+            #f6f9fa 580px,
+            #f6f9fa 500px) !important;
+    background-attachment: fixed;
+}
+
+body.info-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: #ffffff8c;
+    pointer-events: none;
+    z-index: -1;
+}
 .guide {
     width: 40%;
     max-width: 900px;
@@ -466,6 +535,15 @@ hr{
 .guide > h2 {
     text-align: center;
     padding: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #471e8a;
+}
+
+.guide > p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 .imp-notice {
@@ -478,6 +556,7 @@ hr{
 .guide > h3 {
     padding: 10px;
     text-align: center;
+    color:#6d56b8
 }
 
 .guide > h4 {
@@ -485,8 +564,16 @@ hr{
     text-align: left;
     padding: 5px;
     padding-left: 0px;
-
+    color:#74749c;
     font-size: 1.07rem;
+}
+.guide>h5 {
+    margin-top: 20px;
+    text-align: left;
+    padding: 5px;
+    padding-left: 0px;
+    color: #9e9ed6;
+    font-size: 1rem;
 }
 
 .scoliosis-types {
@@ -510,4 +597,42 @@ hr{
 .guide > img {
     padding: 20px;
     max-height: 500px;
+}
+
+.progress-box {
+    border: 3px solid #7d7596;
+    padding: 20px;
+    background-color: #eae5f7;
+    margin-bottom: 20px;
+    background: #8a7bbd;
+    color: #ffffff;
+}
+.progress-box strong {
+    font-size: 1.05rem;
+}
+.progress-box p {
+    font-family: "Poppins", "sans-serif";
+    font-weight: 400px;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 16px;
+    background: #e8e0f0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+.progress-bar-fill {
+    width: 2%;
+    height: 100%;
+    background: #4f3196;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+#progress-percent {
+    justify-self: center;
+    font-weight: bold;
 }

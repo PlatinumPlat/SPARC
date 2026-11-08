@@ -1,5 +1,5 @@
 const today = new Date();
-document.getElementById("session-date").textContent = "Session " + 
+document.getElementById("session-date").textContent = "New Session: " + 
     today.toLocaleDateString("en-US", {
         year: "numeric",
         month: "short",
@@ -11,21 +11,44 @@ const preview = document.getElementById("preview");
 const preview_container = document.getElementById("preview-container");
 const resultImage = document.getElementById("result-image");
 let currentResult = null;
+const progressBox = document.getElementById("progress-box");
+const progressText = document.getElementById("progress-text");
+const progressFill = document.getElementById("progress-bar-fill");
+const progressPercent = document.getElementById("progress-percent");
+
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function updateProgress(message, percent) {
+    progressBox.style.display = "block";
+    progressText.textContent = message;
+    progressBox.style.borderColor = "#d7a9e0";
+    progressFill.style.width = percent + "%";
+    progressPercent.textContent = percent+"%";
+    await wait(500);
+    progressBox.style.borderColor = "#7d7596";
+}
+
 
 input.addEventListener("change", async () => {
+    await updateProgress("Image uploading...", 5);
     const file=input.files[0];
     if (!file) return;
     preview.src=URL.createObjectURL(file);
     preview_container.style.display = "block";
     preview.style.display = "block";
-
+    updateProgress("Image upload complete!", 10);
     const formData = new FormData();
     formData.append("image", file);
+    await updateProgress("Uploading image to SPARC's model... Waiting for analysis...", 25);
     const response = await fetch("/predict", {
         method: "POST",
         body: formData
     });
+    await updateProgress("Reaching final conclusions...", 90);
     const data = await response.json();
+    await updateProgress("Analysis complete! Please view the result image to the right, and the model's conclusions below. You can also download the results image or take a look at the data points determined by the model!", 100);
     currentResult = data;
     resultImage.src = data.image;
     resultImage.style.display = "block";
@@ -58,7 +81,7 @@ samples.forEach(sample=>{
         preview.src = sample.src;
         preview_container.style.display = "block";
         preview.style.display = "block";
-
+        await updateProgress("Sample image selected!", 10);
         const imgresponse = await fetch(sample.src);
         const blob = await imgresponse.blob();
 
@@ -69,14 +92,16 @@ samples.forEach(sample=>{
                 type: blob.type
             }
         );
-
         const formData = new FormData();
         formData.append("image", file);
+        await updateProgress("Uploading image to SPARC's model... Waiting for analysis...", 15);
         const preresponse = await fetch("/predict", {
             method: "POST",
             body: formData
         });
+        await updateProgress("Reaching final conclusions...", 90);
         const data = await preresponse.json();
+        await updateProgress("Analysis complete! Please view the result image to the right, and the model's conclusions below. You can also download the results image or take a look at the data points determined by the model!", 100);
         currentResult = data;
         resultImage.src = data.image;
         resultImage.style.display = "block";
@@ -158,7 +183,7 @@ async function loadSessionList() {
         name.textContent = session.name;
         const deleteBtn = document.createElement("button");
         deleteBtn.className = "delete-session-btn";
-        deleteBtn.innerHTML = "🗑";
+        deleteBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
         deleteBtn.onclick = async (e) => {
             e.stopPropagation();
             await fetch(`/delete_session/${session.id}`, {
@@ -193,7 +218,7 @@ loadSessionList();
 
 async function openSession(id) {
     const response = await fetch(`/session/${id}`);
-
+    progressBox.style.display = "none";
     const data = await response.json();
     preview.src = data.original_image;
     preview.style.display = "block";
@@ -216,7 +241,7 @@ async function openSession(id) {
 const currentSession = document.getElementById("current-session");
 
 currentSession.addEventListener("click", () => {
-    console.log("Current session clicked");
+    updateProgress("Progress will show here... once you click a sample image or upload one of your own!", 0);
     currentResult = null;
     preview.src = "";
     preview.style.display = "none";
